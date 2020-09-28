@@ -1,20 +1,35 @@
 <app-nav-bar></app-nav-bar>
-<h4>Angular Template Driven Form</h4>
+<h4>Angular Forms</h4>
 <div class="container-fluid">
     <div class="row py-5">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-    <div style="background-color: white; padding: 20px;margin-top: 50px" class="rounded">
-        <form #userForm="ngForm"(ngSubmit)="onSubmit(userForm)">
-            <input type="text" name="email" class="form-control" ngModel>
-            <br><br>
-            <input type="password" name="password" class="form-control" ngModel>
-            <br><br>
-            <button type="fsubmit" class="btn btn-primary">login</button>
-        </form> 
-        <p *ngIf=email> Data Entered : {{email}}  </p>
+        <div class="col-md-5">
+        <div style="background-color: white; padding: 20px;margin-top: 50px" class="rounded">
+            <h4>Angular Template Driven Forms</h4>
+            <form #userForm="ngForm"(ngSubmit)="onSubmit(userForm)">
+                <input type="text" name="email" class="form-control" ngModel>
+                <br><br>
+                <input type="password" name="password" class="form-control" ngModel>
+                <br><br>
+                <button type="fsubmit" class="btn btn-primary">login</button>
+            </form> 
+            <p *ngIf=email> Data Entered : {{email}}  </p>
             <p *ngIf=email>  {{password}}  </p>
-      
+        </div>
     </div>
-<div class="col-md-4"></div>
+
+<div class="col-md-2"></div>
+<div class="col-md-5">
+<div style="background-color: white; padding: 20px;margin-top: 50px" class="rounded">
+    <h4>Angular Reactive Forms</h4>
+    <form [formGroup]="UserLogin" (submit)="onSubmitRec()">
+        <input formControlName="Email"><br>
+        <br>
+         <input type="password" formControlName="Pass">  
+         <br><br> 
+         <button type="submit">Submit</button> 
+         <p>    Data Entered : {{Email}}  </p>
+         <p>  {{Password}}  </p>   
+    </form>
+</div>
+</div>
 </div> 
