@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHomeComponent implements OnInit {
 
+  email:any;
+  password:any;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  onSubmit(data)
+  {
+   this.email=data.value.email;
+   this.password=data.value.password;
+
   }
 
 }
