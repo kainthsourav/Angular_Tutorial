@@ -22,9 +22,13 @@
 <div style="background-color: white; padding: 20px;margin-top: 50px" class="rounded">
     <h4>Angular Reactive Forms</h4>
     <form [formGroup]="UserLogin" (submit)="onSubmitRec()">
-        <input formControlName="Email"><br>
+        <input formControlName="Email">
+        <span  *ngIf="!UserLogin.controls.Email.valid && (UserLogin.controls.Email.touched)">* Email Required</span>
         <br>
-         <input type="password" formControlName="Pass">  
+        <br>
+        
+         <input type="password" formControlName="Pass"> 
+         <span  *ngIf="!UserLogin.controls.Pass.valid && (UserLogin.controls.Pass.touched)">* Password Required</span> 
          <br><br> 
          <button type="submit">Submit</button> 
          <p>    Data Entered : {{Email}}  </p>
